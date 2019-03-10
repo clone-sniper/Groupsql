@@ -23,14 +23,12 @@ public class GroupProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception 
-    {
-        new connectDB().createTable();
-        
+    {       
         //adding new people to database
-        Connection conn = new connectDB().getConnection();
+        Connection conn = new connectDB().createTable();
         Statement stmt = conn.createStatement();
-        //stmt.execute("insert into Customer(name, Email, PhoneNumber) values ('bill', 'email', 'number' )");
-        //stmt.execute("insert into Customer(name, Email, PhoneNumber) values ( 'George', 'email', 'number' )");
+        stmt.execute("insert into Customer(name, Email, PhoneNumber) values ('Romero', 'blak@hotmail.com', '801-809-6522' )");
+        stmt.execute("insert into Customer(name, Email, PhoneNumber) values ( 'George', 'email', 'number' )");
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persist");
         EntityManager em = emf.createEntityManager();
